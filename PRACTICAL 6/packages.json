@@ -1,0 +1,6 @@
+[
+  { "id": 1, "title": "Goa Beach Retreat", "duration": "4 Days / 3 Nights", "price": "₹14,999", "category": "Coastal" },
+  { "id": 2, "title": "Manali Snow Adventure", "duration": "6 Days / 5 Nights", "price": "₹21,500", "category": "Mountains" },
+  { "id": 3, "title": "Royal Jaipur Heritage", "duration": "3 Days / 2 Nights", "price": "₹11,200", "category": "Cultural" },
+  { "id": 4, "title": "Kerala Backwaters Cruise", "duration": "5 Days / 4 Nights", "price": "₹18,750", "category": "Nature" }
+]

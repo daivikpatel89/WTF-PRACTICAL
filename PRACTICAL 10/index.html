@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="26DIT029">
+    <title>FinSecure Solutions - Security Management Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">🛡️ FinSecure Solutions Pvt. Ltd.</div>
+        <p class="tagline">Enterprise Security Portal & Vulnerability Defense System | ID: 26DIT029</p>
+    </header>
+
+    <main class="container">
+        <!-- Module 1: Secure Registration & Password Policy -->
+        <section class="card">
+            <h2>1. Secure Registration & Password Policy Enforcement</h2>
+            <p class="desc">Tests minimum length, complexity (uppercase, lowercase, number, special char), and PBKDF2 cryptographic hashing.</p>
+            <form id="registerForm">
+                <label for="regUser">Username:</label>
+                <input type="text" id="regUser" placeholder="Enter username" required>
+
+                <label for="regEmail">Email:</label>
+                <input type="email" id="regEmail" placeholder="Enter corporate email" required>
+
+                <label for="regPass">Password:</label>
+                <input type="password" id="regPass" placeholder="Enter strong password" required>
+                <div id="strengthMeter" class="strength-meter">Password Strength: Weak</div>
+
+                <button type="submit" class="btn btn-primary">Create Secure Account</button>
+            </form>
+            <div id="registerMsg" class="msg-box"></div>
+        </section>
+
+        <!-- Module 2: Authentication & SQL Injection Defense -->
+        <section class="card">
+            <h2>2. Secure Login (SQL Injection Prevention)</h2>
+            <p class="desc">Demonstrates parameterized query lookup preventing SQL Injection bypass attacks (e.g. <code>' OR 1=1 --</code>).</p>
+            <form id="loginForm">
+                <label for="loginUser">Username:</label>
+                <input type="text" id="loginUser" placeholder="admin_daivik" required>
+
+                <label for="loginPass">Password:</label>
+                <input type="password" id="loginPass" placeholder="Password@123" required>
+
+                <button type="submit" class="btn btn-success">Authenticate</button>
+            </form>
+            <div id="loginMsg" class="msg-box"></div>
+        </section>
+
+        <!-- Module 3: XSS Vulnerability & Output Encoding Defense -->
+        <section class="card">
+            <h2>3. Cross-Site Scripting (XSS) Mitigation</h2>
+            <p class="desc">Demonstrates how untrusted input like <code>&lt;script&gt;alert('XSS')&lt;/script&gt;</code> is rendered safely using output encoding.</p>
+            <form id="noteForm">
+                <label for="noteInput">Employee Audit Note:</label>
+                <textarea id="noteInput" rows="3" placeholder="Enter note or test string: <script>alert('XSS Attack')</script>"></textarea>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="sanitizeToggle" checked>
+                    <label for="sanitizeToggle">Enable Output Encoding & Sanitization (Recommended Defense)</label>
+                </div>
+
+                <button type="submit" class="btn btn-warning">Submit Audit Entry</button>
+            </form>
+            <div id="noteMsg" class="msg-box"></div>
+
+            <h3>Recent Audit Records:</h3>
+            <div id="notesContainer" class="notes-display"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 FinSecure Solutions Pvt. Ltd. All Rights Reserved. | ITUS102 Practical 10 - Web Security</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

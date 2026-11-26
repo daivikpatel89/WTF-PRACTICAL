@@ -1,0 +1,516 @@
+/* ===================================================
+   1. CSS RESET & GLOBAL VARIABLES
+   =================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0b3c68;     /* Deep CHARUSAT Blue */
+    --secondary-color: #0077cc;   /* Accent Blue */
+    --accent-orange: #f58220;     /* Highlight Orange */
+    --text-color: #333333;
+    --text-muted: #555555;
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --hover-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-white);
+}
+
+/* Reusable section title styling */
+section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-orange);
+    margin: 8px auto 0 auto;
+    border-radius: 2px;
+}
+
+
+/* ===================================================
+   2. HEADER
+   =================================================== */
+header {
+    background-color: var(--bg-white);
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+header img {
+    max-width: 110px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+
+/* ===================================================
+   3. NAVIGATION BAR
+   =================================================== */
+nav {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 20px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+nav a:hover {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+}
+
+
+/* ===================================================
+   4. HERO SECTION
+   =================================================== */
+.hero {
+    max-width: 100%;
+    padding: 0;
+    overflow: hidden;
+    max-height: 480px;
+    background-color: #000;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    display: block;
+    opacity: 0.92;
+}
+
+
+/* ===================================================
+   5. ABOUT SECTION
+   =================================================== */
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    object-fit: cover;
+}
+
+.about-content {
+    flex: 1.2;
+}
+
+.about-content h2 {
+    text-align: left;
+}
+
+.about-content h2::after {
+    margin: 8px 0 0 0;
+}
+
+.about-content p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.about-content ul {
+    list-style: none;
+}
+
+.about-content ul li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.about-content ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: var(--accent-orange);
+    font-weight: bold;
+}
+
+
+/* ===================================================
+   6. PROGRAMS OFFERED (GRID)
+   =================================================== */
+.programs {
+    background-color: var(--bg-light);
+    max-width: 100%;
+    padding-left: calc((100% - 1200px) / 2 + 20px);
+    padding-right: calc((100% - 1200px) / 2 + 20px);
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.program-card {
+    background-color: var(--bg-white);
+    padding: 30px 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    border-top: 4px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+    border-top-color: var(--accent-orange);
+}
+
+.program-card h3 {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+}
+
+.program-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+
+/* ===================================================
+   7. FACULTY SECTION (GRID & CIRCLE AVATARS)
+   =================================================== */
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 30px;
+}
+
+.faculty-card {
+    background-color: var(--bg-white);
+    border: 1px solid #e9ecef;
+    border-radius: var(--border-radius);
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+}
+
+.faculty-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.faculty-card img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px auto;
+    display: block;
+    border: 3px solid var(--primary-color);
+}
+
+.faculty-card h3 {
+    font-size: 1.15rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.faculty-card p {
+    font-size: 0.9rem;
+    color: var(--accent-orange);
+    font-weight: 600;
+}
+
+
+/* ===================================================
+   8. LABORATORIES SECTION (GRID & CARDS)
+   =================================================== */
+.laboratories {
+    background-color: var(--bg-light);
+    max-width: 100%;
+    padding-left: calc((100% - 1200px) / 2 + 20px);
+    padding-right: calc((100% - 1200px) / 2 + 20px);
+}
+
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.lab-card {
+    background-color: var(--bg-white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+}
+
+.lab-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.lab-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.lab-card h3 {
+    padding: 16px 20px 8px 20px;
+    font-size: 1.15rem;
+    color: var(--primary-color);
+}
+
+.lab-card p {
+    padding: 0 20px 20px 20px;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+}
+
+
+/* ===================================================
+   9. CONTACT SECTION (TWO-COLUMN FLEX/GRID & FORM)
+   =================================================== */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.contact-info,
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--bg-white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+
+.contact-info h3,
+.contact-form h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* Contact Form Styling */
+.contact-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px 14px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 5px rgba(0, 119, 204, 0.3);
+}
+
+.contact-form button {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.contact-form button:hover {
+    background-color: var(--accent-orange);
+}
+
+
+/* ===================================================
+   10. FOOTER
+   =================================================== */
+.footer {
+    background-color: #061e33;
+    color: #e0e0e0;
+    padding: 50px 20px 20px 20px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-about,
+.footer-links {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-about h3,
+.footer-links h3 {
+    color: #ffffff;
+    font-size: 1.15rem;
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    display: inline-block;
+    color: #b0bec5;
+    text-decoration: none;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--accent-orange);
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 20px auto 0 auto;
+    text-align: center;
+    font-size: 0.88rem;
+    color: #90a4ae;
+}
+
+
+/* ===================================================
+   11. RESPONSIVE DESIGN (TABLETS & MOBILE)
+   =================================================== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .about {
+        flex-direction: column;
+    }
+
+    .about-content h2 {
+        text-align: center;
+    }
+
+    .about-content h2::after {
+        margin: 8px auto 0 auto;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links a {
+        display: block;
+        margin-right: 0;
+    }
+}
